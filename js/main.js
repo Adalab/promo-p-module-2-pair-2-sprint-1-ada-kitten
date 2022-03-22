@@ -1,23 +1,66 @@
 'use strict';
 
-const newForm = document.querySelector('.new-form');
+const jsNewForm = document.querySelector('.new-form');
+jsNewForm.classList.add('js-new-form');
+jsNewForm.classList.remove('collapsed');
 
-newForm.classList.add('js-new-form')
-newForm.classList.remove('collapsed');
+
+const jsList = document.querySelector('.list');
+jsList.classList.add('js-list');
+
+let url = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
+const alt = 'gatito';
+let cardTitle = 'anastacio';
+cardTitle = cardTitle.toUpperCase();
+const cardRace = 'British Shorthair';
+let cardDescription = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
 
 
-//////////////////////////////////////////////
+jsList.innerHTML += `<li class="card">
+<article>
+  <img
+    class="card_img"
+    src="${url}"
+    alt="${alt}"
+  />
+  <h3 class="card_title">${cardTitle}</h3>
+  <h4 class="card_race">${cardRace}</h4>
+  <p class="card_description">${cardDescription}</p>
+</article>
+</li>`
 
-const dataList = document.querySelector('.list');
+url = 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg';
+cardTitle = 'fiona';
+cardTitle = cardTitle.toUpperCase();
+cardDescription = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
 
-dataList.classList.add('js-list');
 
-const jsDataList = document.querySelector('.js-list');
+jsList.innerHTML += `<li class="card">
+<img
+  class="card_img"
+  src="${url}"
+  alt="${alt}"
+/>
+<h3 class="card_title">${cardTitle}</h3>
+<h4 class="card_race">${cardRace}</h4>
+<p class="card_description">${cardDescription}</p>
+</li>`;
 
-const kittenOne = ('<li class="card"><article><img class="card_img" src="https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg" alt="gatito"/><h3 class="card_title">Anastasio</h3><p class="card_description"> Ruiseño, juguetón, le gusta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!</p></article></li>');
+url = "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg";
+cardTitle = 'cielo';
+cardTitle = cardTitle.toUpperCase();
+cardDescription = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
 
-const kittenTwo = ('<li class="card"><img class="card_img" src="https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg" alt="gatito" /> <h3 class="card_title">Fiona</h3><h4 class="card_race">British Shorthair</h4><p class="card_description"> Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!</p></li>');
 
-const kittenThree = ('<li class="card"><img class="card_img" src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg" alt="gatito"/><h3 class="card_title">Cielo</h3><h4 class="card_race">British Shorthair</h4><p class="card_description"> Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!</p></li>');
+jsList.innerHTML += `<li class="card">
+<img
+  class="card_img"
+  src="${url}"
+  alt="${alt}"
+/>
+<h3 class="card_title">${cardTitle}</h3>
+<h4 class="card_race">${cardRace}</h4>
+<p class="card_description">${cardDescription}</p>
+</li>`;
 
-jsDataList.innerHTML = kittenOne + kittenTwo + kittenThree;
+const nameCat = cardTitle.toUpperCase();
