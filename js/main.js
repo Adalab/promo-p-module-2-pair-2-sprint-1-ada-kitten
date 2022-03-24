@@ -84,26 +84,46 @@ plus.classList.add("plusHidden");
 const itemPlus = document.querySelector(".item");
 itemPlus.classList.add("js__item");
 
-itemPlus.addEventListener("click", (event) => {
+/*itemPlus.addEventListener("click", (event) => {
   event.preventDefault(event);
   jsNewForm.classList.toggle("collapsed");
-});
+});*/
 
 const btnAdd = document.querySelector(".js-btn-add");
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector(".js-input-photo");
+const inputName = document.querySelector(".js-input-name");
+const labelMesageError = document.querySelector(".js-label-error");
 
 
-btnAdd.addEventListener("click", () => {
-  const inputDesc = document.querySelector(".input");
-  inputDesc.classList.add("js-input-desc");
-
+btnAdd.addEventListener("click", (event) => {
+  
   const valueDesc = inputDesc.value;
-  if (valueDesc === "") {
-    console.log("Debe rellenar todos los valores");
-  } else {
-    console.log("Procede a guardar");
-  }
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    //completa el código
+  } labelMesageError.innerHTML = "Debe rellenar todos los valores";
 
-  // const inputPhoto = document.querySelector(".js-input-photo");
-  // const inputName = document.querySelector(".js-input-name");
-  // const labelMesageError = document.querySelector(".js-label-error");
 });
+
+function showNewCatForm() {
+  jsNewForm.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  jsNewForm.classList.add('collapsed');
+}
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+  console.log('holis');
+  if(jsNewForm.classList.contains('collapsed')){
+    showNewCatForm();
+  }
+  else{
+    hideNewCatForm();
+  }
+}
+itemPlus.addEventListener('click',handleClickNewCatForm);
+
