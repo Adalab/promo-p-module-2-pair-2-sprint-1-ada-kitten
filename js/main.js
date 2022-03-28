@@ -10,7 +10,7 @@ const descrSearchText = input_search_desc.value;
 
 const jsList = document.querySelector(".list");
 jsList.classList.add("js-list");
-
+/*
 let url = "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg";
 const alt = "gatito";
 let cardTitle = "anastacio";
@@ -73,8 +73,9 @@ if (cardDescription.includes(descrSearchText)) {
 <p class="card_description">${cardDescription}</p>
 </li>`;
 }
-const nameCat = cardTitle.toUpperCase();
 
+const nameCat = cardTitle.toUpperCase();
+*/
 jsNewForm.classList.add("collapsed");
 
 const plus = document.querySelector(".menu-nav");
@@ -127,3 +128,55 @@ function handleClickNewCatForm(event) {
 }
 itemPlus.addEventListener('click',handleClickNewCatForm);
 
+// Objetos
+const kittenData_1 = {
+  image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
+  name: 'Anastacio',
+  desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+  race: 'British Shorthair',
+};
+
+const kittenData_2 = {
+  image: 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg',
+  name: 'Fiona',
+  desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+  race: 'British Shorthair',
+};
+
+
+const kittenData_3 = {
+  image: 'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg',
+  name: 'Cielo',
+  desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+  race: 'British Shorthair',
+};
+
+// Lista con la información de todos los gatitos
+const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
+
+function renderKitten(kittenData) {
+  
+  return `<li class="card">
+  <img
+    class="card_img"
+    src="${kittenData.image}"
+    alt="${kittenData.name}"
+  />
+  <h3 class="card_title">${kittenData.name}</h3>
+  <h4 class="card_race">${kittenData.race}</h4>
+  <p class="card_description">${kittenData.desc}</p>
+  </li>`
+};
+
+function renderKittenList(kittenDataList) {
+  
+  //Vaciamos el innerHTML del <ul> de la página.
+  //Iteramos sobre el listado de gatitos
+  for (let i = 0; i < 3; i++){
+    jsList.innerHTML += renderKitten(kittenDataList[i])
+  }
+  
+  //Y por cada iteración pintamos un gatito.
+  //utilizando la función renderKitten(kittenItem)
+};
+renderKittenList(kittenDataList)
